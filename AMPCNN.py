@@ -51,7 +51,7 @@ def onehot(labels):
     return onehot_labels
 
 
-mat = loadmat('D:\\国际会议论文\\会议论文资料\SPQ转子故障\\TWO_WDCNN_DECNN\\数据\\SPQidataset变工况4类5万1千2.mat')
+mat = loadmat('D:\\国际论文\\论文资料\SPQ转子故障\\TWO_WDCNN_DECNN\\数据\\SPQidataset变工况4类5万1千2.mat')
 X_train = mat['X_train']
 X_test = mat['X_test']
 X_val=mat['X_val']
@@ -82,7 +82,7 @@ X_test=X_test[:,:,np.newaxis]
 X_train=X_train[:,:,np.newaxis]
 X_val=X_val[:,:,np.newaxis]
 '''
-savemat('D:\\转子动力学会议论文\\SPQ转子故障\\SPQzhuanzidataset.mat',{'X_train':X_train,\
+savemat('D:\\转子动力学论文\\SPQ转子故障\\SPQzhuanzidataset.mat',{'X_train':X_train,\
                                                          'X_test':X_test,'X_val':X_val,' y_train': y_train,\
                                                              'y_test':y_test,'y_val':y_val})
 '''
@@ -253,7 +253,7 @@ AMPCNN_multi.compile(optimizer=ADAM,
 # Fit the model
 '''
 from tensorflow.keras.models import load_model
-f=load_model('D:\\转子动力学会议论文\\SPQ转子故障\\APCNN99.58%.h5')
+f=load_model('D:\\转子动力学论文\\SPQ转子故障\\APCNN99.58%.h5')
 wdcnn_multi=f'''
 
 history=AMPCNN_multi.fit([X_train], y_train,validation_data = ([X_test],y_test), epochs =300, batch_size = 2560, verbose=1, 
